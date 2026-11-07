@@ -1,0 +1,20 @@
+PASS 7 approach guard 0 position=(799.7896, 622.9338) velocity=(320.0, 0.0) state=playing
+7 released projectile position=(809.9562, 622.933) velocity=(900.0, 0.0) state=playing
+PASS 7 physical cargo kill 0 position=(899.1229, 622.924) velocity=(550.0003, 0.0) state=playing
+PASS 7 approach guard 1 position=(808.8234, 622.9338) velocity=(56.3728, 0.0) state=playing
+7 released projectile position=(816.9598, 622.933) velocity=(900.0, 0.0) state=playing
+PASS 7 physical cargo kill 1 position=(891.7931, 622.924) velocity=(620.0002, 0.0) state=playing
+PASS 7 combat exit without melee position=(1144.959, 622.9933) velocity=(620.0002, 0.0) state=complete
+PASS 8 traversal anchor and cargo lift position=(453.8889, 111.072) velocity=(0.0, 0.0) state=playing
+PASS 8 first shield kinetic impact position=(1175.88, 536.4429) velocity=(1004.501, 473.6665) state=playing
+PASS 8 regroup position=(1222.924, 622.9992) velocity=(0.0, 0.0) state=playing
+PASS 8 return to workshop floor position=(1222.924, 622.9992) velocity=(0.0, 0.0) state=playing
+8 picked second cargo true position=(466.0551, 622.9933) velocity=(16.32361, 0.0) state=playing
+PASS 8 accelerate cargo upward position=(803.8813, 379.9747) velocity=(0.0, -686.0002) state=playing
+PASS 8 second shield reverse-gravity impact position=(803.8813, 137.0162) velocity=(0.0, -971.8342) state=playing
+PASS 8 upper dock position=(803.8813, 111.004) velocity=(0.0, 0.0) state=playing
+PASS 8 third shield downward impact position=(923.9658, 557.1791) velocity=(0.0, 931.0008) state=playing
+PASS 8 all circuits and traversal completed position=(923.9658, 557.1791) velocity=(0.0, 931.0008) state=playing
+PASS 8 dock before final choice position=(923.9658, 622.9549) velocity=(0.0, 0.0) state=playing
+PASS 8 reach physical choice terminal position=(316.1309, 614.4714) velocity=(0.0, -503.6667) state=playing
+PASS 8 physical terminal ending position=(316.1309, 614.4714) velocity=(0.0, -503.6667) state=ending

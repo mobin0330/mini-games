@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <radialGradient id="choco" cx="36%" cy="30%" r="75%">
+      <stop offset="0" stop-color="#9a6a4a"/>
+      <stop offset=".45" stop-color="#5d3523"/>
+      <stop offset="1" stop-color="#2b150d"/>
+    </radialGradient>
+    <linearGradient id="fuse" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4d29a"/>
+      <stop offset="1" stop-color="#b98244"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.4" flood-color="#2b150d" flood-opacity=".45"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <circle cx="61" cy="68" r="42" fill="url(#choco)" stroke="#241009" stroke-width="2.2"/>
+    <path d="M75 32c9-9 8-19 18-22" fill="none" stroke="url(#fuse)" stroke-width="7" stroke-linecap="round"/>
+    <path d="M76 31c9-9 7-17 17-21" fill="none" stroke="#fff2c8" stroke-width="2.4" stroke-linecap="round" opacity=".6"/>
+    <path d="M95 8l3.2 8.6L107 20l-8.8 3.4L95 32l-3.2-8.6L83 20l8.8-3.4Z" fill="#ffe06b" stroke="#ff9c3d" stroke-width="1.4"/>
+    <ellipse cx="43" cy="46" rx="15" ry="8" fill="#fff" opacity=".22" transform="rotate(-30 43 46)"/>
+    <circle cx="47" cy="80" r="3" fill="#e8c9a7" opacity=".5"/>
+    <circle cx="77" cy="91" r="2.2" fill="#e8c9a7" opacity=".4"/>
+  </g>
+</svg>

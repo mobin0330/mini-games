@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7ead2">
+  <title>甜品消消乐 · 连锁、特殊糖果与不限时轻松一局</title>
+  <link rel="stylesheet" href="styles.css?v=20261107b">
+  <script src="engine.js?v=20261107" defer></script>
+  <script src="sfx.js?v=20261107b" defer></script>
+  <script src="app.js?v=20261107b" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#board">跳到棋盘</a>
+
+  <div class="ambience" aria-hidden="true">
+    <span class="ambience__glow ambience__glow--1"></span>
+    <span class="ambience__glow ambience__glow--2"></span>
+    <span class="ambience__glow ambience__glow--3"></span>
+    <span class="ambience__glow ambience__glow--4"></span>
+    <span class="ambience__sprinkle ambience__sprinkle--1"></span>
+    <span class="ambience__sprinkle ambience__sprinkle--2"></span>
+    <span class="ambience__sprinkle ambience__sprinkle--3"></span>
+    <span class="ambience__sprinkle ambience__sprinkle--4"></span>
+    <span class="ambience__sprinkle ambience__sprinkle--5"></span>
+    <span class="ambience__sprinkle ambience__sprinkle--6"></span>
+    <span class="ambience__sprinkle ambience__sprinkle--7"></span>
+    <span class="ambience__sprinkle ambience__sprinkle--8"></span>
+  </div>
+
+  <div class="page">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <span class="brand-mark__macaron"></span>
+          <span class="brand-mark__lolli"></span>
+        </span>
+        <div class="brand-copy">
+          <p class="brand-kicker">DESSERT MATCH</p>
+          <h1>甜品消消乐</h1>
+        </div>
+      </div>
+      <nav class="home-links" aria-label="页面导航">
+        <a href="/">游戏主页</a>
+        <a href="https://home.ericmo.top" rel="noopener">Home</a>
+      </nav>
+    </header>
+
+    <main class="game-layout">
+      <section class="board-card" aria-labelledby="board-title">
+        <div class="board-heading">
+          <div>
+            <h2 id="board-title">今日甜品柜</h2>
+            <p class="board-meta">8 × 8 · 不限时 · 连锁越多越甜</p>
+          </div>
+          <div class="hud" aria-label="本局数据">
+            <div class="hud__score">
+              <span class="hud__label">得分</span>
+              <strong id="score" class="hud__value">0</strong>
+            </div>
+            <div class="hud__item">
+              <span class="hud__label">最高分</span>
+              <strong id="best" class="hud__value hud__value--small">0</strong>
+            </div>
+            <div class="hud__item">
+              <span class="hud__label">步数</span>
+              <strong id="moves" class="hud__value hud__value--small">0</strong>
+            </div>
+          </div>
+        </div>
+
+        <div id="stage" class="board-stage">
+          <div
+            id="board"
+            class="board"
+            role="grid"
+            aria-label="消消乐棋盘，共 8 行 8 列"
+            aria-rowcount="8"
+            aria-colcount="8"
+            aria-busy="false"
+          ><span class="board__sheen" aria-hidden="true"></span></div>
+          <canvas id="fx" class="fx-layer" aria-hidden="true"></canvas>
+          <div id="flash" class="flash-layer" aria-hidden="true"></div>
+          <div id="score-fx" class="score-layer" aria-hidden="true"></div>
+          <div id="combo" class="combo-badge" aria-hidden="true"></div>
+          <div id="record" class="record-badge" aria-hidden="true">新纪录！</div>
+        </div>
+
+        <p id="status" class="status" role="status" aria-live="polite" aria-atomic="true">
+          选择相邻的两个甜品交换，连成三个或更多即可消除。四连、五连会生成特殊甜品。
+        </p>
+      </section>
+
+      <aside class="side-panel" aria-label="操作与玩法">
+        <section class="controls" aria-label="游戏操作">
+          <button id="hint" class="button button--soft" type="button">
+            <span class="button__icon" aria-hidden="true">✦</span>
+            提示一步
+          </button>
+          <button id="restart" class="button button--primary" type="button">
+            <span class="button__icon" aria-hidden="true">↻</span>
+            重新开始
+          </button>
+        </section>
+
+        <section class="switches" aria-label="声音与震动">
+          <button id="sound" class="switch-button" type="button" aria-pressed="true">
+            <span class="switch-button__dot" aria-hidden="true"></span>
+            声音
+            <span id="sound-state" class="switch-button__state">开</span>
+          </button>
+          <button id="haptics" class="switch-button" type="button" aria-pressed="true">
+            <span class="switch-button__dot" aria-hidden="true"></span>
+            震动
+            <span id="haptics-state" class="switch-button__state">开</span>
+          </button>
+        </section>
+
+        <section class="rules" aria-labelledby="rules-title">
+          <h2 id="rules-title">甜品菜单</h2>
+          <ul class="rules-list">
+            <li><strong>基础消除</strong>：交换相邻甜品，横竖连成三个或更多同色即可消除。</li>
+            <li><strong>四连火箭糖</strong>：消除整行或整列，方向由连成的方向决定。</li>
+            <li><strong>T / L 型炸弹</strong>：生成巧克力炸弹，炸掉周围 3 × 3 的甜品。</li>
+            <li><strong>五连彩虹糖</strong>：与任意甜品交换，清除全场同色甜品。</li>
+            <li><strong>连锁 Combo</strong>：一次交换引发的连续消除会提升倍率、音高和震动强度。</li>
+          </ul>
+          <p class="keyboard-note">
+            键盘：方向键移动焦点，Enter 或空格选择方块，Esc 取消选择。触屏可按住拖动交换。
+          </p>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <p>没有时间限制，随时再来一局。</p>
+      <nav class="footer-links" aria-label="页脚导航">
+        <a href="/">游戏主页</a>
+        <a href="https://home.ericmo.top" rel="noopener">Home</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>

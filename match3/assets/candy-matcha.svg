@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="6.2 8.8 115.5 115.5">
+  <defs>
+    <linearGradient id="matcha" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a6dd7f"/>
+      <stop offset=".45" stop-color="#62b963"/>
+      <stop offset="1" stop-color="#2b7a49"/>
+    </linearGradient>
+    <linearGradient id="cream" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fffdf2"/>
+      <stop offset="1" stop-color="#f0e0b8"/>
+    </linearGradient>
+    <clipPath id="diamond">
+      <path d="M64 12 112 64 64 116 16 64Z"/>
+    </clipPath>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3.5"/>
+    </filter>
+  </defs>
+  <ellipse cx="64" cy="113" rx="36" ry="6.5" fill="#214d31" opacity=".22" filter="url(#soft)"/>
+  <path d="M64 12 112 64 64 116 16 64Z" fill="url(#matcha)" stroke="#22653d" stroke-width="2.2" stroke-linejoin="round"/>
+  <g clip-path="url(#diamond)">
+    <rect x="12" y="54" width="104" height="18" fill="url(#cream)"/>
+    <path d="M12 54c10 5 18-3 27 0s16 6 25 0 18-5 27 0 15 3 23 0v6c-9 2-16 3-24-1s-17-5-26 0-16 5-24 0-17-4-25 1Z" fill="#fff" opacity=".55"/>
+  </g>
+  <path d="M64 22 100 59" stroke="#e5ffd2" stroke-width="5" stroke-linecap="round" opacity=".65"/>
+  <path d="M43 84c9-6 15 3 24-2 7-4 11-1 15 3" fill="none" stroke="#d8ffc1" stroke-width="3" stroke-linecap="round" opacity=".55"/>
+  <g fill="#d9ffc0">
+    <circle cx="50" cy="43" r="1.5"/><circle cx="73" cy="35" r="1.3"/>
+    <circle cx="84" cy="76" r="1.5"/><circle cx="40" cy="76" r="1.3"/>
+    <circle cx="62" cy="95" r="1.2"/>
+  </g>
+</svg>

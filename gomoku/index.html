@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="本地双人五子棋，15×15 棋盘，黑棋先行。">
+  <title>五子棋 · 本地双人对战</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <nav class="game-navigation" aria-label="返回导航"><a href="/">← 游戏主页</a><a href="https://home.ericmo.top">Home</a></nav>
+    <header class="app__header">
+      <h1 class="app__title">五子棋</h1>
+      <p class="app__subtitle">本地双人对战 · 15×15 · 黑棋先行</p>
+    </header>
+
+    <section class="status-panel" aria-label="对局状态">
+      <p id="status" class="status" role="status" aria-live="polite">黑方回合</p>
+      <p id="move-count" class="move-count">已落子 0 手</p>
+    </section>
+
+    <div class="board-wrap">
+      <div id="board" class="board" role="grid" aria-label="15乘15五子棋棋盘"></div>
+    </div>
+
+    <div class="controls">
+      <button id="undo" type="button" class="button" disabled>悔棋</button>
+      <button id="reset" type="button" class="button button--primary">重新开始</button>
+    </div>
+
+    <p class="hint">键盘操作：Tab 移动焦点，Enter 或空格落子。</p>
+    <noscript>
+      <p class="hint hint--warning">需要启用 JavaScript 才能开始游戏。</p>
+    </noscript>
+  </main>
+
+  <script src="engine.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

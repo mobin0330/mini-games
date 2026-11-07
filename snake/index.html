@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+  <title>经典贪吃蛇</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <a class="back-link" href="/" aria-label="返回游戏主页">← 游戏主页</a>
+      <a class="home-link" href="https://home.ericmo.top">home.ericmo.top</a>
+    </header>
+
+    <main class="game" aria-labelledby="game-title">
+      <div class="game-heading">
+        <h1 id="game-title">经典贪吃蛇</h1>
+        <p class="hint">方向键 / WASD 转向，空格暂停</p>
+      </div>
+
+      <section class="scoreboard" aria-label="得分与状态">
+        <div class="score-item">
+          <span class="score-label">当前分</span>
+          <strong id="score" class="score-value">0</strong>
+        </div>
+        <div class="score-item">
+          <span class="score-label">本机最高分</span>
+          <strong id="best" class="score-value">0</strong>
+        </div>
+        <p id="status" class="status" role="status" aria-live="polite">准备开始</p>
+      </section>
+
+      <div class="board-wrap">
+        <canvas id="board" width="400" height="400" tabindex="0" aria-label="20 乘 20 贪吃蛇棋盘">当前棋盘状态请参考上方的游戏状态文字。</canvas>
+      </div>
+
+      <div class="controls" role="group" aria-label="游戏控制">
+        <button id="start" class="btn btn-primary" type="button">开始</button>
+        <button id="pause" class="btn" type="button" disabled>暂停</button>
+        <button id="restart" class="btn" type="button">重新开始</button>
+      </div>
+
+      <div class="dpad" role="group" aria-label="方向控制">
+        <button class="dpad-btn dpad-up" type="button" data-direction="up" aria-label="向上">↑</button>
+        <button class="dpad-btn dpad-left" type="button" data-direction="left" aria-label="向左">←</button>
+        <button class="dpad-btn dpad-down" type="button" data-direction="down" aria-label="向下">↓</button>
+        <button class="dpad-btn dpad-right" type="button" data-direction="right" aria-label="向右">→</button>
+      </div>
+
+      <p class="footer-note">在棋盘上滑动，或使用下方方向按钮，也可以控制蛇的转向。</p>
+    </main>
+  </div>
+
+  <script src="engine.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
